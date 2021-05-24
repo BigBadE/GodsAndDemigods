@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IncidentCategoryDef>
+    <defName>Corruption</defName>
+  </IncidentCategoryDef>
+
+  <!-- For mods adding WorldObjects that are corruptible -->
+  <IncidentTargetTagDef>
+    <defName>Corruptible</defName>
+  </IncidentTargetTagDef>
+  
+  <!-- Event for settlements being corrupted -->
+  <IncidentDef>
+    <defName>SettlementCorruption</defName>
+    <label>settlementcorruption</label>
+    <category>Corruption</category>
+    <targetTags>
+      <li>Map_Misc</li>
+      <li>Corruption</li>
+    </targetTags>
+    <workerClass>OldWorldGods.Incidents.IncidentWorker_SettlementCorruption</workerClass>
+    <baseChance>10</baseChance>
+  </IncidentDef>
+
+  <!-- Event for settlements being cleansed -->
+  <IncidentDef>
+    <defName>SettlementCleansing</defName>
+    <label>settlementcleansing</label>
+    <category>Corruption</category>
+    <targetTags>
+      <li>Map_Misc</li>
+      <li>Corruption</li>
+    </targetTags>
+    <workerClass>OldWorldGods.Incidents.IncidentWorker_SettlementCleansing</workerClass>
+    <baseChance>10</baseChance>
+  </IncidentDef>
+</Defs>

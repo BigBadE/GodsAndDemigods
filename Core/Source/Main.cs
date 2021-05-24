@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-
-using UnityEngine;
+﻿using RimWorld;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
-using Verse.Sound;
-using Verse.Noise;
-using Verse.Grammar;
-using RimWorld;
-using RimWorld.Planet;
 
 //using System.Reflection;
 //using HarmonyLib;
 
-namespace Template
+namespace OldWorldGods
 {
     [DefOf]
     public class TemplateDefOf
@@ -30,6 +17,7 @@ namespace Template
         public MyMapComponent(Map map) : base(map){}
         public override void FinalizeInit()
         {
+            Find.World.ConstructComponents();
             Messages.Message("Success", null, MessageTypeDefOf.PositiveEvent);
             Find.LetterStack.ReceiveLetter("Success", TemplateDefOf.success_letter.description, TemplateDefOf.success_letter, null);
         }
@@ -43,5 +31,4 @@ namespace Template
             Log.Message("Mod template loaded successfully!");
         }
     }
-
 }

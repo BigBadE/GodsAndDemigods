@@ -35,3 +35,9 @@ Other chaos gods will vie to spread their influence as well
 
 Royalty has a new ending, after obtaining the next two titles. Requires fighting off the chaos
 as well as gaining honor. Fighting chaos also grants honor.
+
+### Credits
+
+Help from:
+- RimWorld discord development channel
+- Dynamic Diplomacy source
