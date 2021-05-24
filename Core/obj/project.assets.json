@@ -12,10 +12,10 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.0-alpha",
     "restore": {
       "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\OldWorldGods\\Core\\Core.csproj",
-      "projectName": "OldWorldGods",
+      "projectName": "OldWorldGodsCore",
       "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\OldWorldGods\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\bmene\\.nuget\\packages\\",
       "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\OldWorldGods\\Core\\obj\\",
