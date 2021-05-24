@@ -1,0 +1,7 @@
+.vscode/
+.idea/
+
+# /*/Assemblies
+# /*/Assemblies/*.pdb
+# /.vscode
+# /Source
