@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Em6r7k14uXRXyaEIAREmebCXN67ZLMZmXzmSZmF0b0dd6DO4OvyJaOisOLRrtcdHOR8cENthfbZqUiNnrfs9bg==",
+  "dgSpecHash": "UXuDQrRN+NqPD4BCWy0ELwet8+fCQtVDYHEstghtAcKuLLn0Cs1OOr3QwzxujDOZX+yxDx+2UOx3H/skdUiQ1Q==",
   "success": true,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\OldWorldGods\\Core\\Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bmene\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

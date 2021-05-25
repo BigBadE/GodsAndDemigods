@@ -1,12 +1,12 @@
-﻿// unset
-
-using RimWorld;
-using Verse;
+﻿using Verse;
 
 namespace OldWorldGods.Source.Defs
 {
     public class GodDef : Def
     {
-        public bool chaos;
+        public bool chaos = true;
+
+        public string easterEggName;
+        public RulePackDef names;
     }
 }

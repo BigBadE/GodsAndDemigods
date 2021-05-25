@@ -31,4 +31,8 @@
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
+
+ 	<ItemGroup>
+ 	  <PackageReference Include="Lib.Harmony" Version="2.0.4" />
+ 	</ItemGroup>
 </Project>

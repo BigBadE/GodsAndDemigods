@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef>
+    <defName>Corrupt</defName>
+    <label>Corrupt</label>
+    <pawnSingular>cultist of a Chaos god</pawnSingular>
+    <pawnsPlural>cultists of a Chaos god</pawnsPlural>
+    <description>Cultists worshipping a Chaos god</description>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <factionIconPath>UI/CorruptedSettlement</factionIconPath>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <humanlikeFaction>true</humanlikeFaction>
+    <hidden>true</hidden>
+    <autoFlee>false</autoFlee>
+    <!-- TODO cult name maker -->
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <canUseAvoidGrid>true</canUseAvoidGrid>
+    <techLevel>Industrial</techLevel>
+    <backstoryFilters>
+    <li>
+      <categories>
+        <li>Outlander</li>
+      </categories>
+      <commonality>0.95</commonality>
+    </li>
+    <li>
+      <categories>
+        <li>Offworld</li>
+      </categories>
+      <commonality>0.05</commonality>
+    </li>
+    </backstoryFilters>
+
+    <hairTags>
+      <li>Rural</li>
+    </hairTags>
+    
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <permanentEnemy>true</permanentEnemy>
+
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(140, 50)</li>
+        <li>(1400, 100)</li>
+        <li>(2600, 150)</li>
+        <li>(200000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, standard mix -->
+        <kindDef>Combat</kindDef>
+        <options>
+          <Cultist>5</Cultist>
+          <Cultist_Guard>10</Cultist_Guard>
+          <Cultist_Priest>1.5</Cultist_Priest>
+          <Slave_Fighter>7</Slave_Fighter>
+          <Slave_Gunner>10</Slave_Gunner>
+          <Cultist_Caster>10</Cultist_Caster>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Cultist>10</Cultist>
+          <Cultist_Guard>10</Cultist_Guard>
+          <Cultist_Priest>1.5</Cultist_Priest>
+          <Slave_Fighter>7</Slave_Fighter>
+          <Slave_Gunner>10</Slave_Gunner>
+          <Cultist_Caster>10</Cultist_Caster>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

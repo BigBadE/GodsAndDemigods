@@ -11,12 +11,11 @@
   
   <!-- Event for settlements being corrupted -->
   <IncidentDef>
-    <defName>SettlementCorruption</defName>
-    <label>settlementcorruption</label>
+    <defName>Settlement_Corruption</defName>
+    <label>settlement corruption</label>
     <category>Corruption</category>
     <targetTags>
-      <li>Map_Misc</li>
-      <li>Corruption</li>
+      <li>World</li>
     </targetTags>
     <workerClass>OldWorldGods.Incidents.IncidentWorker_SettlementCorruption</workerClass>
     <baseChance>10</baseChance>
@@ -24,12 +23,11 @@
 
   <!-- Event for settlements being cleansed -->
   <IncidentDef>
-    <defName>SettlementCleansing</defName>
-    <label>settlementcleansing</label>
+    <defName>Settlement_Cleansing</defName>
+    <label>settlement cleansing</label>
     <category>Corruption</category>
     <targetTags>
-      <li>Map_Misc</li>
-      <li>Corruption</li>
+      <li>World</li>
     </targetTags>
     <workerClass>OldWorldGods.Incidents.IncidentWorker_SettlementCleansing</workerClass>
     <baseChance>10</baseChance>

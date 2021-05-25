@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PawnKindDef Name="Corrupted" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>Corrupt</defaultFactionType>
+    <chemicalAddictionChance>0.12</chemicalAddictionChance>
+    <backstoryCryptosleepCommonality>0.05</backstoryCryptosleepCommonality>
+    <invNutrition>2.55</invNutrition>
+    <biocodeWeaponChance>0.1</biocodeWeaponChance>
+  </PawnKindDef>
+
+  <!-- Poverty tier - slave -->
+  <PawnKindDef ParentName="Corrupted">
+    <defName>Slave</defName>
+    <label>slave</label>
+    <combatPower>35</combatPower>
+    <invNutrition>0</invNutrition>
+    <gearHealthRange>0.2~0.6</gearHealthRange>
+    <itemQuality>Poor</itemQuality>
+    <apparelMoney>90~280</apparelMoney>
+    <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponMoney>60~200</weaponMoney>
+    <weaponTags>
+      <li>MedievalMeleeBasic</li>
+      <li>NeolithicMeleeBasic</li>
+    </weaponTags>
+    <techHediffsMoney>50~50</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.15</techHediffsChance>
+    <inventoryOptions>
+      <skipChance>0.9</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineHerbal</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </PawnKindDef>
+
+  <!-- Low tier - equipped slaves -->
+  <PawnKindDef ParentName="Corrupted" Name="CorruptSlaveTierBase" Abstract="True">
+    <combatPower>45</combatPower>
+    <backstoryCryptosleepCommonality>0.05</backstoryCryptosleepCommonality>
+    <itemQuality>Poor</itemQuality>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+    </apparelTags>
+    <gearHealthRange>0.4~1.1</gearHealthRange>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <techHediffsMoney>50~50</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.04</techHediffsChance>
+    <inventoryOptions>
+      <skipChance>0.95</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CorruptSlaveTierBase">
+    <defName>Slave_Gunner</defName>
+    <label>slave gunner</label>
+    <apparelMoney>300~500</apparelMoney>
+    <weaponMoney>200~300</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CorruptSlaveTierBase">
+    <defName>Slave_Fighter</defName>
+    <label>slave fighter</label>
+    <race>Human</race>
+    <canBeSapper>true</canBeSapper>
+    <apparelMoney>300~800</apparelMoney>
+    <apparelTags>
+      <li>Outlander</li>
+    </apparelTags>
+    <weaponMoney>100~160</weaponMoney>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
+      <li>MedievalMeleeBasic</li>
+      <li>MedievalMeleeDecent</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- Mid tier - cultist -->
+  <PawnKindDef ParentName="Corrupted">
+    <defName>Cultist_Caster</defName>
+    <label>cultist caster</label>
+    <race>Human</race>
+    <combatPower>65</combatPower>
+    <maxGenerationAge>65</maxGenerationAge>
+    <gearHealthRange>0.7~2.3</gearHealthRange>
+    <apparelMoney>400~1000</apparelMoney>
+    <apparelTags>
+      <!-- TODO casters -->
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
+    <weaponMoney>250~345</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <techHediffsChance>0.04</techHediffsChance>
+    <techHediffsMoney>50~800</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+    </techHediffsTags>
+    <inventoryOptions>
+      <skipChance>0.9</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+    <biocodeWeaponChance>0.2</biocodeWeaponChance>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="Corrupted">
+    <defName>Cultist</defName>
+    <label>cultist</label>
+    <combatPower>35</combatPower>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags>
+      <!-- TODO casters -->
+      <li>Gun</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <weaponMoney>65~250</weaponMoney>
+    <apparelMoney>200~400</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <techHediffsChance>0.06</techHediffsChance>
+    <techHediffsMoney>50~600</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+    </techHediffsTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Corrupted">
+    <defName>Cultist_Guard</defName>
+    <label>cultist guard</label>
+    <combatPower>55</combatPower>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.6~2</gearHealthRange>
+    <apparelTags>
+      <!-- TODO casters -->
+      <li>IndustrialMilitaryBasic</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>400~600</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponTags>
+      <!-- TODO casters -->
+      <li>Gun</li>
+    </weaponTags>
+    <weaponMoney>250~400</weaponMoney>
+    <techHediffsChance>0.04</techHediffsChance>
+    <techHediffsMoney>200~700</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+    </techHediffsTags>
+  </PawnKindDef>
+  
+  <!-- High tier - priests -->
+  <PawnKindDef ParentName="Corrupted">
+    <defName>Cultist_Priest</defName>
+    <label>cultist priest</label>
+    <race>Human</race>
+    <combatPower>200</combatPower>
+    <maxGenerationAge>65</maxGenerationAge>
+    <gearHealthRange>0.7~2.3</gearHealthRange>
+    <apparelMoney>800~2000</apparelMoney>
+    <apparelTags>
+      <!-- TODO casters -->
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <weaponMoney>400~700</weaponMoney>
+    <weaponTags>
+      <!-- TODO casters -->
+      <li>Gun</li>
+    </weaponTags>
+    <techHediffsChance>0.04</techHediffsChance>
+    <techHediffsMoney>50~800</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+    </techHediffsTags>
+    <inventoryOptions>
+      <skipChance>0.9</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+    <biocodeWeaponChance>0.2</biocodeWeaponChance>
+  </PawnKindDef>
+</Defs>

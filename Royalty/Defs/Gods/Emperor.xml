@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <God>
+    <defName>Emperor</defName>
+    <chaos>false</chaos>
+    <names>GodNames</names>
+  </God>
+</Defs>

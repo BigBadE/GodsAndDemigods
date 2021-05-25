@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.7.2": {}
+    ".NETFramework,Version=v4.7.2": {
+      "Lib.Harmony/2.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net472/0Harmony.dll": {}
+        },
+        "runtime": {
+          "lib/net472/0Harmony.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Lib.Harmony/2.0.4": {
+      "sha512": "m4Lm5W2pYU6+aTJpeUzHsX12chKXynIZPlsM5tV6O+WQxs3xa+teQHBjCNFXePDB1HXiiuAmtjyCo/E9fRuSIg==",
+      "type": "package",
+      "path": "lib.harmony/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "HarmonyLogo.png",
+        "LICENSE",
+        "lib.harmony.2.0.4.nupkg.sha512",
+        "lib.harmony.nuspec",
+        "lib/net35/0Harmony.dll",
+        "lib/net35/0Harmony.xml",
+        "lib/net45/0Harmony.dll",
+        "lib/net45/0Harmony.xml",
+        "lib/net472/0Harmony.dll",
+        "lib/net472/0Harmony.xml",
+        "lib/net48/0Harmony.dll",
+        "lib/net48/0Harmony.xml",
+        "lib/netcoreapp3.0/0Harmony.dll",
+        "lib/netcoreapp3.0/0Harmony.xml",
+        "lib/netcoreapp3.1/0Harmony.dll",
+        "lib/netcoreapp3.1/0Harmony.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.7.2": []
+    ".NETFramework,Version=v4.7.2": [
+      "Lib.Harmony >= 2.0.4"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\bmene\\.nuget\\packages\\": {},
@@ -48,7 +86,13 @@
     },
     "frameworks": {
       "net472": {
-        "targetAlias": "net472"
+        "targetAlias": "net472",
+        "dependencies": {
+          "Lib.Harmony": {
+            "target": "Package",
+            "version": "[2.0.4, )"
+          }
+        }
       }
     }
   }

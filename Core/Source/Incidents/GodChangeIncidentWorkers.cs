@@ -1,6 +1,7 @@
 ﻿// unset
 
 using System.Collections.Generic;
+using System.Linq;
 using OldWorldGods.Base;
 using RimWorld;
 using RimWorld.Planet;
@@ -15,6 +16,24 @@ namespace OldWorldGods.Incidents
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             Gods gods = Find.World.GetComponent<Gods>();
+            return PlayerAndEnemySettlement(gods, true, Chaos);
+        }
+
+        protected override bool TryExecuteWorker(IncidentParms parms)
+        {
+            WorldObject target = Find.World.worldObjects.AllWorldObjects.Where(God.CanCorrupt).RandomElement();
+
+            if (target == null) return false;
+
+            List<God> gods = Find.World.GetComponent<Gods>().AllGods;
+            gods.ForEach(loser => loser.LoseControl(target));
+            Find.World.GetComponent<Gods>().AllGods.Where(god => god.GetDef.chaos == Chaos)
+                .RandomElementByWeight(god => god.ControlledObjects.Count).GainControl(target);
+            return true;
+        }
+
+        private static bool PlayerAndEnemySettlement(Gods gods, bool checkChaos, bool chaos)
+        {
             bool player = false;
             bool any = false;
             foreach (God god in gods.AllGods)
@@ -23,26 +42,13 @@ namespace OldWorldGods.Incidents
                 {
                     player = true;
                 }
-                else if (god.GetDef.chaos == Chaos)
+                else if (!checkChaos || god.GetDef.chaos == chaos)
                 {
                     any = true;
                 }
             }
 
             return player && any;
-        }
-
-        protected override bool TryExecuteWorker(IncidentParms parms)
-        {
-            WorldObject target = Find.World.worldObjects.WorldObjectAt<WorldObject>(parms.target.Tile);
-
-            if (!God.CanCorrupt(target)) return false;
-            
-            List<God> gods = Find.World.GetComponent<Gods>().AllGods;
-            gods.ForEach(loser => loser.LoseControl(target));
-            Find.World.GetComponent<Gods>().AllGods
-                .RandomElementByWeight(god => god.ControlledObjects.Count).GainControl(target);
-            return true;
         }
     }
 

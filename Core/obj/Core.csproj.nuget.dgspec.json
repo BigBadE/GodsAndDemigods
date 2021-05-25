@@ -41,7 +41,13 @@
       },
       "frameworks": {
         "net472": {
-          "targetAlias": "net472"
+          "targetAlias": "net472",
+          "dependencies": {
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            }
+          }
         }
       }
     }

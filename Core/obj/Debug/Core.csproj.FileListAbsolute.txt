@@ -5,3 +5,5 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\ob
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\obj\Debug\Core.AssemblyInfo.cs
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\Assemblies\OldWorldGodsCore.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\obj\Debug\OldWorldGodsCore.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\Assemblies\0Harmony.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\obj\Debug\Core.csproj.CopyComplete
