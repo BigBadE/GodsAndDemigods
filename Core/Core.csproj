@@ -25,11 +25,6 @@
 	 	<Reference Include="../../../RimWorldWin64_Data/Managed/*.dll">
 			<Private>False</Private>
 		</Reference>
-
-		<!-- Harmony -->
-		<Reference Include="../../Harmony/v1.1/Assemblies/0Harmony.dll">
-			<Private>False</Private>
-		</Reference>
 	</ItemGroup>
 
  	<ItemGroup>

@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OldWorldGods.Defs;
-using OldWorldGods.Source.Defs;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
-using Verse.Grammar;
 
 namespace OldWorldGods.Base
 {
@@ -32,6 +30,7 @@ namespace OldWorldGods.Base
             this.def = def;
             this.name = (def.easterEggName != null && Find.World.info.seedString.ToLower().Equals("warhammer")) ? 
                 def.easterEggName : NameGenerator.GenerateName(def.names, yes => true);
+            
         }
 
         public void LoseControl(WorldObject target)

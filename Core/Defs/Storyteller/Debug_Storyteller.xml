@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <StorytellerDef ParentName="BaseStoryteller">
+    <defName>OWGDebug</defName>
+    <label>OWG Debug Storyteller</label>
+    <description>Spams so many events, don't run on max speed!</description>
+    <portraitLarge>UI/HeroArt/Storytellers/CassandraClassic</portraitLarge>
+    <portraitTiny>UI/HeroArt/Storytellers/CassandraClassicTiny</portraitTiny>
+    <listOrder>95</listOrder>
+    <populationIntentFactorFromPopCurve>
+      <points>
+        <li>0, 8.0</li>
+        <li>2, 8.0</li>
+        <li>10, 4.0</li>
+        <li>18, 2.0</li>
+        <li>24, 1.0</li>
+        <li>40, -1.0</li>
+      </points>
+    </populationIntentFactorFromPopCurve>
+    <populationIntentFactorFromPopAdaptDaysCurve>
+      <points>
+        <li>( 0, 0)</li>
+        <li>(20, 1.00)</li>
+      </points>
+    </populationIntentFactorFromPopAdaptDaysCurve>
+    <comps>
+      <li Class="StorytellerCompProperties_OnOffCycle">
+        <category>Colonist_Corruption</category>
+        <onDays>0.1</onDays>
+        <offDays>0.1</offDays>
+        <minSpacingDays>0.0</minSpacingDays>
+        <numIncidentsRange>1~1</numIncidentsRange>
+      </li>
+      <li Class="StorytellerCompProperties_OnOffCycle">
+        <category>Corruption</category>
+        <onDays>1</onDays>
+        <offDays>15</offDays>
+        <minSpacingDays>0.0</minSpacingDays>
+        <numIncidentsRange>1~1</numIncidentsRange>
+      </li>
+    </comps>
+  </StorytellerDef>
+</Defs>

@@ -25,10 +25,9 @@
         <Reference Include="../../../RimWorldWin64_Data/Managed/*.dll">
             <Private>False</Private>
         </Reference>
+    </ItemGroup>
 
-        <!-- Harmony -->
-        <Reference Include="../../Harmony/v1.1/Assemblies/0Harmony.dll">
-            <Private>False</Private>
-        </Reference>
+    <ItemGroup>
+        <PackageReference Include="Lib.Harmony" Version="2.0.4" />
     </ItemGroup>
 </Project>

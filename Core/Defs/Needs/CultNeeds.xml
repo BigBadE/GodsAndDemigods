@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <NeedDef>
+    <defName>NeedCult</defName>
+    <needClass>OldWorldGods.Needs.Need_Cult</needClass>
+    <label>following</label>
+    <description>Worshippers have a loyalty, having higher moods, cult garb, and more other worshippers raises this stat.</description>
+    <showOnNeedList>true</showOnNeedList>
+    <minIntelligence>Humanlike</minIntelligence>
+    <baseLevel>0.0</baseLevel>
+    <fallPerDay>0.0</fallPerDay>
+    <neverOnPrisoner>true</neverOnPrisoner>
+    <seekerRisePerHour>0.12</seekerRisePerHour>
+    <seekerFallPerHour>0.08</seekerFallPerHour>
+  </NeedDef>
+</Defs>

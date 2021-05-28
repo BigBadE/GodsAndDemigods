@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RulePackDef>
+    <defName>DreamDescriptionRoot</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_dream_description->[dream_start]. Then, [dream_action]. [dream_end]</li>
+
+        <li>dream_start->[ANYPAWN_nameDef] finds a [adjective] [symbol]</li>
+        <li>dream_start->[ANYPAWN_nameDef] woke up in [location]</li>
+
+        <li>dream_action->the floor dropped from below them</li>
+        <li>dream_action->they sunk into the floor like quicksand</li>
+        <li>dream_action->they ran from an unknown noise</li>
+        <li>dream_action->they fled from falling spikes</li>
+        <li>dream_action->they watched the colony burn to the ground around them</li>
+        <li>dream_action->they fought a group of raiders</li>
+        <li>dream_action->they fought a group of bandits</li>
+
+        <li>dream_end->They find a [ANYSYMBOLUNFOUND] on the floor</li>
+        <li>dream_end->They find a [ANYSYMBOLUNFOUND] on the dirt</li>
+        <li>dream_end->They find a [ANYSYMBOLUNFOUND] on the walls</li>
+        <li>dream_end->They closed their eyes and saw a [ANYSYMBOLUNFOUND]</li>
+        <li>dream_end->They saw a [ANYSYMBOLUNFOUND] tattooed on their [ANYBODYPART]</li>
+        <li>dream_end->They saw a [ANYSYMBOLUNFOUND] carved on their [ANYBODYPART]</li>
+
+        <li>adjective->golden</li>
+        <li>adjective->shiny</li>
+        <li>adjective->beautiful</li>
+        <li>adjective->golden</li>
+        <li>adjective->bloody</li>
+        <li>adjective->black</li>
+        <li>adjective->white</li>
+
+        <li>symbol->pentagram</li>
+        <li>symbol->cross</li>
+        <li>symbol->star</li>
+        <li>symbol->horn</li>
+        <li>symbol->[ANYBODYPART]</li>
+
+        <li>location->an ice sheet</li>
+        <li>location->a desert</li>
+        <li>location->an unknown building</li>
+        <li>location->a large temple</li>
+        <li>location->a religious building</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

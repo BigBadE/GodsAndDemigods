@@ -1,6 +1,4 @@
-﻿// unset
-
-using RimWorld;
+﻿using RimWorld;
 
 namespace OldWorldGods.Defs
 {
@@ -9,6 +7,6 @@ namespace OldWorldGods.Defs
     {
         public static FactionDef Corrupt;
         
-        static CorruptFactionDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FactionDefOf));
+        static CorruptFactionDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(CorruptFactionDefOf));
     }
 }

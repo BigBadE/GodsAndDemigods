@@ -3,15 +3,10 @@
   <IncidentCategoryDef>
     <defName>Corruption</defName>
   </IncidentCategoryDef>
-
-  <!-- For mods adding WorldObjects that are corruptible -->
-  <IncidentTargetTagDef>
-    <defName>Corruptible</defName>
-  </IncidentTargetTagDef>
   
   <!-- Event for settlements being corrupted -->
   <IncidentDef>
-    <defName>Settlement_Corruption</defName>
+    <defName>SettlementCorruption</defName>
     <label>settlement corruption</label>
     <category>Corruption</category>
     <targetTags>
@@ -23,7 +18,7 @@
 
   <!-- Event for settlements being cleansed -->
   <IncidentDef>
-    <defName>Settlement_Cleansing</defName>
+    <defName>SettlementCleansing</defName>
     <label>settlement cleansing</label>
     <category>Corruption</category>
     <targetTags>

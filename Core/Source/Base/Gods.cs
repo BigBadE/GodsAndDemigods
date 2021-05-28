@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
-using OldWorldGods.Source.Defs;
+using OldWorldGods.Defs;
+using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
 namespace OldWorldGods.Base
 {
-    public class Gods : WorldComponent
+    public class Gods : GameComponent
     {
         private List<God> gods;
+        private God playerGod;
+        
         //Float between 0 and 100
         private Dictionary<WorldObject, float> detection;
         
         public List<God> AllGods => gods;
+        public God PlayerGod => playerGod;
 
-        public Gods(World world) : base(world)
+        public Gods(Game game)
         {
-            Harmony harmony = new Harmony("bigbade.OldWorldGods.Core");
+            Harmony harmony = new Harmony("OldWorldGods");
 
             if (SystemInfo.operatingSystemFamily == OperatingSystemFamily.Linux)
             {
@@ -29,10 +33,20 @@ namespace OldWorldGods.Base
 
             harmony.PatchAll();
             
-            gods = DefDatabase<GodDef>.AllDefsListForReading.Select(def => new God(def)).ToList();
             detection = new Dictionary<WorldObject, float>();
+            gods = DefDatabase<GodDef>.AllDefsListForReading.Select(def => new God(def)).ToList();
+            if (!gods.Any()) return;
+            playerGod = gods.RandomElement();
+            playerGod.IsPlayerGod = true;
         }
-
+        
+        public override void StartedNewGame()
+        {
+            Current.Game.storyteller.incidentQueue.Add(DefDatabase<IncidentDef>.GetNamed("CorruptWhispers"), 
+                Current.Game.tickManager.TicksGame + 180000, new IncidentParms {target = Find.AnyPlayerHomeMap });
+            Faction.Empire.allowRoyalFavorRewards = false;
+        }
+        
         public float GetDetection(WorldObject worldObject)
         {
             return detection.TryGetValue(worldObject, out var detectionLevel) ? detectionLevel : 0;
@@ -44,8 +58,7 @@ namespace OldWorldGods.Base
             Scribe_Collections.Look(ref gods, "gods", LookMode.Deep);
             Scribe_Collections.Look(ref detection, "detection", LookMode.Reference, LookMode.Value);
         }
-        
-        
+
         // Fix a crash related to a harmony bug on Linux
         // This gets all patches Empire makes, gets the ones that would crash on Linux, and fixes them
         static void FixLinuxHarmonyCrash(Harmony harmony)

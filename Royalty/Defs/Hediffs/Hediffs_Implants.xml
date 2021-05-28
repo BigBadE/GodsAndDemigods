@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Corruption Protector -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>CorruptionProtector</defName>
+    <label>corruption protector</label>
+    <labelNoun>a corruption protector</labelNoun>
+    <description>An installed corruption protector implant.</description>
+    <descriptionHyperlinks><ThingDef>CorruptionProtector</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>CorruptionProtector</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartRoyalBase">
+    <defName>CorruptionProtector</defName>
+    <label>corruption protector</label>
+    <description>Protects the user from corruption by Chaos gods</description>
+    <descriptionHyperlinks><RecipeDef>InstallCorruptionProtector</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallCorruptionProtector</defName>
+    <label>install corruption protector</label>
+    <description>Install a corruption protector.</description>
+    <descriptionHyperlinks>
+      <ThingDef>CorruptionProtector</ThingDef>
+      <HediffDef>CorruptionProtector</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing corruption protector.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>CorruptionProtector</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>CorruptionProtector</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>CorruptionProtector</addsHediff>
+  </RecipeDef>
+</Defs>

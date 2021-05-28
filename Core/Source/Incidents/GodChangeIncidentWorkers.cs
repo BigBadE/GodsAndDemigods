@@ -1,6 +1,4 @@
-﻿// unset
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using OldWorldGods.Base;
 using RimWorld;
@@ -15,7 +13,7 @@ namespace OldWorldGods.Incidents
 
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            Gods gods = Find.World.GetComponent<Gods>();
+            Gods gods = Current.Game.GetComponent<Gods>();
             return PlayerAndEnemySettlement(gods, true, Chaos);
         }
 
@@ -25,9 +23,9 @@ namespace OldWorldGods.Incidents
 
             if (target == null) return false;
 
-            List<God> gods = Find.World.GetComponent<Gods>().AllGods;
+            List<God> gods = Current.Game.GetComponent<Gods>().AllGods;
             gods.ForEach(loser => loser.LoseControl(target));
-            Find.World.GetComponent<Gods>().AllGods.Where(god => god.GetDef.chaos == Chaos)
+            Current.Game.GetComponent<Gods>().AllGods.Where(god => god.GetDef.chaos == Chaos)
                 .RandomElementByWeight(god => god.ControlledObjects.Count).GainControl(target);
             return true;
         }
