@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_CultRobe</defName>
+    <label>Robe</label>
+    <description>A cultist robe. Increases the following of a pawn.</description>
+    <graphicData>
+      <texPath>Apparel/Robes/Robes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>110</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>320</MaxHitPoints>
+      <WorkToMake>3600</WorkToMake>
+      <Mass>0.5</Mass>
+      <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.42</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <!-- FullHead -->
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Robes/Robes</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>IndustrialBasic</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="OldWorldGods.Comps.CompProperties_CultApparel">
+        <apparelValue>.5</apparelValue>
+      </li>
+    </comps>
+    <colorGenerator Class="ColorGenerator_StandardApparel"/>
+  </ThingDef>
+</Defs>

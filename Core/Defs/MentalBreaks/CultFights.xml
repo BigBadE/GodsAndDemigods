@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>CultFight</defName>
+    <stateClass>MentalState_SocialFighting</stateClass>
+    <label>cult fight</label>
+    <minTicksBeforeRecovery>720</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.02</recoveryMtbDays>
+    <category>Aggro</category>
+    <nameColor>(0.88,0.48,0.16)</nameColor>
+    <baseInspectLine>Mental state: Cult fight</baseInspectLine>
+    <unspawnedCanDo>true</unspawnedCanDo>
+  </MentalStateDef>
+</Defs>

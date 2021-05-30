@@ -20,4 +20,7 @@
   <HorrificDreamText>{0} had a dream about {1}</HorrificDreamText>
   <RunicVision>Runic Vision</RunicVision>
   <RunicVisionText>{0} had a vision about {1}</RunicVisionText>
+  <CultFight>Cult Fight</CultFight>
+  <CultFightText>{0} started a fight with {1} because they don't like the cult</CultFightText>
+  <CultFightStop>{0} stopped fighting with {1}</CultFightStop>
 </LanguageData>

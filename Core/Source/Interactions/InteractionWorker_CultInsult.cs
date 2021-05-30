@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using OldWorldGods.Needs;
 using RimWorld;
+using UnityEngine.U2D;
 using Verse;
 
 namespace OldWorldGods.Interactions
@@ -9,10 +11,8 @@ namespace OldWorldGods.Interactions
     {
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            return (initiator.needs.TryGetNeed<Need_Cult>().CurLevel !=
-                    recipient.needs.TryGetNeed<Need_Cult>().CurLevel)
-                ? 10
-                : 0;
+            return (Math.Abs(initiator.needs.TryGetNeed<Need_Cult>().CurLevel - 
+                             recipient.needs.TryGetNeed<Need_Cult>().CurLevel) > .001f) ? .2f : 0;
         }
 
         public override void Interacted(

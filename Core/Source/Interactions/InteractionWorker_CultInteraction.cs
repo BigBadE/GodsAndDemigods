@@ -9,8 +9,8 @@ namespace OldWorldGods.Interactions
     {
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            return (initiator.needs.TryGetNeed<Need_Cult>() != null) && (recipient.needs.TryGetNeed<Need_Cult>() != null)
-                ? 10 : 0;
+            return (initiator.needs.TryGetNeed<Need_Cult>().CurLevel > 0) && (recipient.needs.TryGetNeed<Need_Cult>().CurLevel > 0)
+                ? .3f : 0;
         }
 
         public override void Interacted(

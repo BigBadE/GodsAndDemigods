@@ -76,8 +76,8 @@ namespace OldWorldGods.Incidents
         private static IEnumerable<Pawn> ActualVictims(IncidentParms parms)
         {
             int num = PossibleVictims(parms.target).Count();
-            int count = Mathf.Clamp(new IntRange(Mathf.RoundToInt(num * 0.4f), 
-                Mathf.RoundToInt(num * 0.6f)).RandomInRange, 1, 3);
+            int count = Mathf.Clamp(new IntRange(Mathf.RoundToInt(num * 0.2f), 
+                Mathf.RoundToInt(num * 0.4f)).RandomInRange, 1, 3);
             return CorruptableVictims(parms.target).InRandomOrder().Take(count);
         }
     }

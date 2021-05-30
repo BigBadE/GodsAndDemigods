@@ -44,7 +44,7 @@
     <defName>CultInsult</defName>
     <label>disagreed about religion</label>
     <workerClass>OldWorldGods.Interactions.InteractionWorker_CultInsult</workerClass>
-    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+    <symbol>Things/Mote/SpeechSymbols/Slight</symbol>
     <initiatorThought>Slighted</initiatorThought>
     <recipientThought>Slighted</recipientThought>
     <logRulesInitiator>
@@ -68,6 +68,20 @@
         <li>god->god</li>
         <li>god->the cult</li>
         <li>god->religion</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>CultFight</defName>
+    <label>fought about religion</label>
+    <workerClass>OldWorldGods.Interactions.InteractionWorker_CultFight</workerClass>
+    <symbol>Things/Mote/SpeechSymbols/Slight</symbol>
+    <initiatorThought>Insulted</initiatorThought>
+    <recipientThought>Insulted</recipientThought>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] started fighting [RECIPIENT_nameDef] because of their cult affilation.</li>
       </rulesStrings>
     </logRulesInitiator>
   </InteractionDef>
