@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OldWorldGods.Misc;
+using OldWorldGods.Needs;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -21,17 +22,18 @@ namespace OldWorldGods.Jobs
         {
             return pawn.Map.blueprintGrid.InnerArray
                 .Where(blueprint => blueprint != null)
-                .SelectMany(blueprints => blueprints?.OfType<RuneBlueprint>());
+                .SelectMany(blueprints => blueprints.OfType<RuneBlueprint>()
+                    .Where(blueprint => pawn.Map.reservationManager.CanReserve(pawn, blueprint)));
         }
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             RuneBlueprint blue = (RuneBlueprint) t;
-            if (!GenConstruct.CanConstruct(blue, pawn, false, forced))
-                return null;
             Job job2 = this.ResourceDeliverJobFor(pawn, blue);
             if (job2 != null)
                 return job2;
+            if (pawn.needs.TryGetNeed<Need_Cult>().CurLevel < .001f)
+                return null;
             Job job3 = this.NoCostFrameMakeJobFor(blue);
             return job3;
         }

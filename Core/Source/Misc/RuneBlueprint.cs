@@ -26,9 +26,9 @@ namespace OldWorldGods.Misc
         
         public override string Label => "UndrawnRune".Translate();
 
-        public override Vector3 DrawPos => drawPos ?? CalculateDrawPos();
+        public override Vector3 DrawPos => rune.DrawPosition(Position, 2f);
 
-        public override Graphic Graphic => RuneManager.GetRuneGraphic(rune);
+        public override Graphic Graphic => rune.Graphic;
         
         public ThingOwner GetDirectlyHeldThings() => this.resourceContainer;
         
@@ -72,24 +72,14 @@ namespace OldWorldGods.Misc
                 stringBuilder.AppendLine();
             stringBuilder.AppendLine("ContainedResources".Translate() + ":");
             ThingDefCountClass thingDefCountClass = MaterialsNeeded()[0];
-            stringBuilder.Append(thingDefCountClass.thingDef.LabelCap + ": 0 / " + thingDefCountClass.count);
+            stringBuilder.Append(thingDefCountClass.thingDef.LabelCap + ": " + GetDirectlyHeldThings().Count + " / " + thingDefCountClass.count);
             return stringBuilder.ToString().Trim();
-        }
-
-        private Vector3 CalculateDrawPos()
-        {
-            //Sin/Cos with a period of 8 (simplified)
-            drawPos = new Vector3(Mathf.Sin(Mathf.PI * rune.Position / 4) * 2f,
-                AltitudeLayer.MoteBelowThings.AltitudeFor(),
-                -Mathf.Cos(Mathf.PI * rune.Position / 4) * 2f) + new Vector3(Position.x + .5f, 0, Position.z + .5f);
-
-            return drawPos.Value;
         }
 
         protected override Thing MakeSolidThing()
         {
             runeComp.AddRune(rune);
-            Map.blueprintGrid.DeRegister(this);
+            Destroy();
             //Just in case any mods check
             return this;
         }
@@ -111,6 +101,13 @@ namespace OldWorldGods.Misc
             if (workerPawn.needs.TryGetNeed<Need_Cult>().CurLevel <= .001f)
             {
                 workerPawn.jobs.EndCurrentJob(JobCondition.Incompletable);
+                jobEnded = true;
+                createdThing = null;
+                return false;
+            }
+            
+            if (resourceContainer.Count < 1)
+            {
                 jobEnded = false;
                 createdThing = null;
                 return false;
@@ -121,7 +118,7 @@ namespace OldWorldGods.Misc
         }
 
         public override List<ThingDefCountClass> MaterialsNeeded() => 
-            new List<ThingDefCountClass> {new ThingDefCountClass(ThingsDefOf.Chalk, 5)};
+            new List<ThingDefCountClass> {new ThingDefCountClass(ThingsDefOf.Chalk, 1)};
 
         public override ThingDef EntityToBuildStuff() => ThingsDefOf.Chalk;
 

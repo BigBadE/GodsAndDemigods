@@ -59,7 +59,7 @@ namespace OldWorldGods.Tabs
                             CalculateOffset(Mathf.Cos(Mathf.PI * i / 4))+5),
                         new Vector2(50, 50)),
                     found == null ? Texture2D.normalTexture : 
-                        (Texture2D) RuneManager.GetRuneGraphic(found).MatNorth.mainTexture)) continue;
+                        (Texture2D) found.Graphic.MatNorth.mainTexture)) continue;
                 if (found == null)
                 {
                     runes.Add(new Rune(i, 0));

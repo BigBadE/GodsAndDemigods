@@ -6,20 +6,17 @@ using Verse;
 
 namespace OldWorldGods.Comps
 {
-    public class CompRune : ThingComp
+    public class CompRune : CompGlower
     {
         private List<Rune> runes = new List<Rune>();
+        private bool glowOnInt;
+        private bool midRitual = false;
 
         public List<Rune> Runes => runes ?? (runes = new List<Rune>());
-
+        
         //Needed for initialization
         public CompRune()
         {
-        }
-
-        public void QueueRune(Rune rune)
-        {
-            Find.Maps[0].blueprintGrid.Register(new RuneBlueprint(parent, rune));
         }
 
         public void AddRune(Rune rune)
@@ -57,6 +54,28 @@ namespace OldWorldGods.Comps
             }
         }
 
+        public override void CompTick()
+        {
+            base.CompTick();
+            Log.Message("Runes: " + runes.Count);
+            foreach (Rune rune in runes)
+            {
+                Log.Message("Drawing " + rune.Type);
+                rune.Graphic.Draw(rune.DrawPosition(parent.Position, 2f), Rot4.North, parent);
+            }
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            if (midRitual)
+            {
+                this.UpdateLit(this.parent.Map);
+                this.parent.Map.glowGrid.RegisterGlower(this);
+            }
+            else
+                this.UpdateLit(this.parent.Map);
+        }
+
         public override void PostDeSpawn(Map map)
         {
             CellIndices cellIndices = map.cellIndices;
@@ -72,6 +91,24 @@ namespace OldWorldGods.Comps
                     if (innerArray[index].Count == 0)
                         innerArray[index] = null;
                 }
+            }
+            this.UpdateLit(map);
+        }
+
+        private new void UpdateLit(Map map)
+        {
+            if (this.glowOnInt == midRitual)
+                return;
+            this.glowOnInt = midRitual;
+            if (!this.glowOnInt)
+            {
+                map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlag.Things);
+                map.glowGrid.DeRegisterGlower(this);
+            }
+            else
+            {
+                map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlag.Things);
+                map.glowGrid.RegisterGlower(this);
             }
         }
         
