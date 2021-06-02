@@ -10,7 +10,6 @@ namespace OldWorldGods.Incidents
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            Log.Message("Done!");
             Caravan target = (Caravan) parms.target;
             QuestPart_GiveImplants.AddImplants(target.pawns.InnerListForReading.Where(pawn => pawn.RaceProps.body.AllParts
                     .Any(body => body.def.Equals(BodyPartDefOf.Brain))));

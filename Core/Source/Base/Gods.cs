@@ -14,11 +14,13 @@ namespace OldWorldGods.Base
     public class Gods : GameComponent
     {
         private List<God> gods;
+        private List<SpellDef> foundSpells = new List<SpellDef>();
         private God playerGod;
         
         //Float between 0 and 100
         private Dictionary<WorldObject, float> detection;
-        
+
+        public List<SpellDef> FoundSpells => foundSpells;
         public List<God> AllGods => gods;
         public God PlayerGod => playerGod;
 

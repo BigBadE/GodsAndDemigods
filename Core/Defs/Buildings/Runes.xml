@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Main_Rune</defName>
+    <label>main rune</label>
+    <description>A large rune for performing rituals to cast spells.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>1</pathCost>
+    <useHitPoints>false</useHitPoints>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/Runes/Main_Rune</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <costList>
+      <Chalk>10</Chalk>
+    </costList>
+    <size>(5,5)</size>
+    <designationCategory>Misc</designationCategory>
+    <rotatable>false</rotatable>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <inspectorTabs>
+      <li>OldWorldGods.Tabs.ITab_Runes</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="OldWorldGods.Comps.CompProperties_Rune"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Spell_Rune_Building</defName>
+    <label>building spell rune</label>
+    <entityDefToBuild>Spell_Rune</entityDefToBuild>
+  </ThingDef>
+  
+  <TerrainDef ParentName="TileStoneBase">
+    <defName>Spell_Rune</defName>
+    <label>spell rune</label>
+    <description>A spell rune used to control what spell is cast</description>
+    <color>(0,0,0)</color>
+    <costList>
+      <Chalk>1</Chalk>
+    </costList>
+  </TerrainDef>
+</Defs>

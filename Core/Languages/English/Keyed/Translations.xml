@@ -23,4 +23,8 @@
   <CultFight>Cult Fight</CultFight>
   <CultFightText>{0} started a fight with {1} because they don't like the cult</CultFightText>
   <CultFightStop>{0} stopped fighting with {1}</CultFightStop>
+  <UndrawnRune>An undrawn rune (placeholder)</UndrawnRune>
+  <TabRunes>Runes</TabRunes>
+  <TabRunesTitle>Draw Runes</TabRunesTitle>
+  <FoundRunes>Re-summon Found Rune</FoundRunes>
 </LanguageData>
