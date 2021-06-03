@@ -12,7 +12,10 @@
     <questDescriptionRules>
       <rulesStrings>
         <!-- Asker is faction leader -->
-        <li>questDescription(asker_factionLeader==True)->[asker_faction_leaderTitle] [asker_nameFull] of [asker_faction_name] is willing to give your colonists protective implants.\n\n[asker_pronoun] is asking you to lend [asker_objective] [colonistCountToLend] for 1 day.\n\n[willSendShuttle]</li>
+        <li>questDescription(asker_factionLeader==True)->[asker_faction_leaderTitle] [asker_nameFull] of
+          [asker_faction_name] is willing to give your colonists protective implants.\n\n[asker_pronoun] is asking you
+          to lend [asker_objective] [colonistCountToLend] for 1 day.\n\n[willSendShuttle]
+        </li>
 
         <li>colonistCountToLend(colonistsToLendCount==1)->1 colonist</li>
         <li>colonistCountToLend(colonistsToLendCount>1)->[colonistsToLendCount] colonists</li>
@@ -28,18 +31,11 @@
 
     <root Class="QuestNode_Sequence">
       <nodes>
-        <li Class="QuestNode_RandomNode">
-          <nodes>
-            <li Class="QuestNode_Sequence">
-              <selectionWeight>0.5</selectionWeight>
-              <nodes>
-                <li Class="QuestNode_Set">
-                  <name>returnLetterText</name>
-                  <value TKey="LetterTextReturnAfterHelping">{PAWNS} [pawnListHaveConjugation] returned with protective implants. [asker_faction_name] is now more friendly.</value>
-                </li>
-              </nodes>
-            </li>
-          </nodes>
+        <li Class="QuestNode_Set">
+          <name>returnLetterText</name>
+          <value TKey="LetterTextReturnAfterHelping">{PAWNS} [pawnListHaveConjugation] returned with protective
+            implants. [asker_faction_name] is now more friendly.
+          </value>
         </li>
 
         <!-- Shuttle -->

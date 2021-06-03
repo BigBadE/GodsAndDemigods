@@ -30,7 +30,7 @@ namespace OldWorldGods.Incidents
             }
             
             string str = "CorruptWhispers".Translate(pawns.Count.ToString(), Faction.OfPlayer.def.pawnsPlural,
-                    Current.Game.GetComponent<Gods>().PlayerGod?.GetDef.words ?? "DefaultWords".Translate(), 
+                    Current.Game.GetComponent<Gods>().playerGod?.GetDef.words ?? "DefaultWords".Translate(), 
                     stringBuilder.ToString());
 
             this.SendStandardLetter("CorruptWhispersTitle".Translate(), str, 

@@ -1,26 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace OldWorldGods.Defs.SpellEffects
 {
-    public class EffectSpellDef : SpellEffectDef
+    public class EffectSpellDef : PawnEffectingSpell
     {
-        [System.ComponentModel.Description("Hediff to add")]
+        [Description("Hediff to add")]
         public HediffDef hediff;
 
-        [System.ComponentModel.Description("Target body part (nullable)")]
+        [Description("Target body part (nullable)")]
         public BodyPartDef bodyPart;
 
-        [System.ComponentModel.Description("Target type: Enemy, friendly, any")]
-        public string target;
-
-        public override void Execute(GodDef god, float strength, int casters, List<Thing> targets)
+        public override void Execute(Thing ritual, GodDef god, float strength, int casters, List<LocalTargetInfo> targets)
         {
-            foreach (Thing thing in targets)
+            foreach (LocalTargetInfo thing in targets.Where(thing => thing.Pawn != null))
             {
-                if (!(thing is Pawn pawn)) continue;
-                BodyPartRecord record = pawn.RaceProps.body.AllParts.Find(part => part.def.Equals(bodyPart));
-                pawn.health.AddHediff(hediff, record);
+                BodyPartRecord record = thing.Pawn.RaceProps.body.AllParts.Find(part => part.def.Equals(bodyPart));
+                thing.Pawn.health.AddHediff(hediff, record);
             }
         }
     }

@@ -6,30 +6,29 @@ using Verse;
 
 namespace OldWorldGods.Defs.SpellEffects
 {
-    public class GearEffectSpellDef : SpellEffectDef
+    public class GearEffectSpellDef : PawnEffectingSpell
     {
-        [System.ComponentModel.Description("Item effect")]
+        [Description("Item effect")]
         public ItemEffect effect;
         
-        [System.ComponentModel.Description("Target apparel layers (nullable)")]
+        [Description("Target apparel layers (nullable)")]
         public List<ApparelLayerDef> apparelLayers;
 
-        [System.ComponentModel.Description("Should effect every item on the pawn")]
+        [Description("Should effect every item on the pawn")]
         public bool effectAll;
 
-        public override void Execute(GodDef god, float strength, int casters, List<Thing> targets)
+        public override void Execute(Thing ritual, GodDef god, float strength, int casters, List<LocalTargetInfo> targets)
         {
-            foreach (Thing thing in targets)
+            foreach (LocalTargetInfo thing in targets.Where(thing => thing.Pawn != null))
             {
-                if (!(thing is Pawn pawn)) continue;
                 List<Apparel> apparels;
                 if (effectAll)
                 {
-                    apparels = pawn.apparel.WornApparel;
+                    apparels = thing.Pawn.apparel.WornApparel;
                 }
                 else
                 {
-                    apparels = pawn.apparel.WornApparel.Where(apparel => 
+                    apparels = thing.Pawn.apparel.WornApparel.Where(apparel => 
                         apparel.def.apparel.layers.Any(layer => apparelLayers.Contains(layer))).ToList();
                 }
 

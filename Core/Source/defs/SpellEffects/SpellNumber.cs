@@ -12,5 +12,10 @@ namespace OldWorldGods.Defs.SpellEffects
         
         [Description("Increase per target")]
         public float targetMultiplier;
+        
+        public float CalculateNumber(int casters, int targets)
+        {
+            return baseValue * (1 + casterMultiplier * casters) * (1 + targetMultiplier * targets);
+        }
     }
 }

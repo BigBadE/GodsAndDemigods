@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Reflection;
+using OldWorldGods.Base;
 using OldWorldGods.Defs.DefOfs;
 using RimWorld;
 using Verse;
@@ -13,7 +14,7 @@ namespace OldWorldGods.Conditions
             BindingFlags.NonPublic | BindingFlags.Instance);
 
         public override bool Expired => false;
-        
+
         public override void Init()
         {
             StorytellerCompProperties_OnOffCycle compProperties =
@@ -28,6 +29,13 @@ namespace OldWorldGods.Conditions
             StorytellerComp comp = new StorytellerComp_OnOffCycle();
             comp.props = compProperties;
             Find.Storyteller.storytellerComps.Add(comp);
+
+            Gods gods = Current.Game.GetComponent<Gods>();
+            gods.playerGod = gods.AllGods.RandomElement();
+            if (gods.playerGod != null)
+            {
+                gods.playerGod.IsPlayerGod = true;
+            }
         }
 
         public override void End()
@@ -41,6 +49,9 @@ namespace OldWorldGods.Conditions
             {
                 Find.Storyteller?.storytellerComps?.Remove(storytellerComp);
             }
+            Gods gods = Current.Game.GetComponent<Gods>();
+            gods.playerGod.IsPlayerGod = false;
+            gods.playerGod = null;
         }
 
         public void CheckPawns()

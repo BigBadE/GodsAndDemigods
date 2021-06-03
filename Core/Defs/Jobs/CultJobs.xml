@@ -21,4 +21,11 @@
     <nonColonistsCanDo>false</nonColonistsCanDo>
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
+
+  <JobDef>
+    <defName>PerformRitual</defName>
+    <driverClass>OldWorldGods.Jobs.JobDriver_PerformRitual</driverClass>
+    <reportString>performing ritual.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

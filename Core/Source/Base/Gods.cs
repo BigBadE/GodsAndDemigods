@@ -15,14 +15,13 @@ namespace OldWorldGods.Base
     {
         private List<God> gods;
         private List<SpellDef> foundSpells = new List<SpellDef>();
-        private God playerGod;
+        public God playerGod;
         
         //Float between 0 and 100
         private Dictionary<WorldObject, float> detection;
 
         public List<SpellDef> FoundSpells => foundSpells;
         public List<God> AllGods => gods;
-        public God PlayerGod => playerGod;
 
         public Gods(Game game)
         {
@@ -37,9 +36,6 @@ namespace OldWorldGods.Base
             
             detection = new Dictionary<WorldObject, float>();
             gods = DefDatabase<GodDef>.AllDefsListForReading.Select(def => new God(def)).ToList();
-            if (!gods.Any()) return;
-            playerGod = gods.RandomElement();
-            playerGod.IsPlayerGod = true;
         }
         
         public override void StartedNewGame()

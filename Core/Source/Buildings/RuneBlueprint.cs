@@ -31,8 +31,7 @@ namespace OldWorldGods.Buildings
         
         public void GetChildHolders(List<IThingHolder> outChildren) => 
             ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, this.GetDirectlyHeldThings());
-
-
+        
         public RuneBlueprint()
         {
         }

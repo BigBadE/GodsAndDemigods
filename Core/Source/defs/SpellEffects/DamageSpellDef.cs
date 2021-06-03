@@ -1,29 +1,26 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OldWorldGods.Base;
+using RimWorld;
 using Verse;
 
 namespace OldWorldGods.Defs.SpellEffects
 {
-    public class DamageSpellDef : SpellEffectDef
+    public class DamageSpellDef : PawnEffectingSpell
     {
-        [System.ComponentModel.Description("Should kill or down")]
+        [Description("Should kill or down")]
         public bool kill;
         
-        [System.ComponentModel.Description("How many hours until death should be left (nullable)")]
+        [Description("How many hours until death should be left (nullable)")]
         public SpellNumber hoursLeft;
-        
-        [System.ComponentModel.Description("Target type: Enemy, friendly, any")]
-        public string target;
 
-        public override void Execute(GodDef god, float strength, int casters, List<Thing> targets)
+        public override void Execute(Thing ritual, GodDef god, float strength, int casters, List<LocalTargetInfo> targets)
         {
-            foreach (Thing thing in targets)
+            foreach (LocalTargetInfo thing in targets.Where(thing => thing.Pawn != null))
             {
-                if (thing is Pawn pawn)
-                {
-                    SpellManager.ApplyGodEffect(god, pawn, targets.Count, casters, strength, this);
-                }
+                SpellManager.ApplyGodEffect(god, thing.Pawn, targets.Count, casters, strength, this);
             }
         }
+
     }
 }
