@@ -45,7 +45,7 @@ namespace OldWorldGods.Base
             Graphic graphic = runeGraphics.TryGetValue(rune.Type);
             if (graphic != null) return graphic;
             graphic = GraphicDatabase.Get(typeof(Graphic_Single), "Buildings/Runes/Spells/Rune_" + rune.Type,
-                ShaderTypeDefOf.EdgeDetect.Shader, new Vector2(1, 1), BlueprintColor, Color.white, new GraphicData(),
+                ShaderTypeDefOf.EdgeDetect.Shader, new Vector2(1, 1), Color.red, Color.clear, new GraphicData(),
                 new List<ShaderParameter>());
             runeGraphics[rune.Type] = graphic;
 

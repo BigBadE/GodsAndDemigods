@@ -2,6 +2,7 @@
 using System.Linq;
 using JetBrains.Annotations;
 using OldWorldGods.Base;
+using OldWorldGods.Buildings;
 using OldWorldGods.Comps;
 using OldWorldGods.Defs;
 using RimWorld;
@@ -48,7 +49,7 @@ namespace OldWorldGods.Tabs
             Widgets.DrawTextureFitted(rect2, RuneTexture, 1);
             if (runes == null)
             {
-                runes = SelThing.TryGetComp<CompRune>().Runes.ListFullCopy();
+                runes = ((Building_Rune) SelThing).Runes.ListFullCopy();
             }
 
             for (int i = 0; i < 8; i++)
@@ -83,7 +84,7 @@ namespace OldWorldGods.Tabs
 
             if (Widgets.ButtonImage(new Rect(rect2.size / 2, new Vector2(50, 50)), CastTexture))
             {
-                SelThing.TryGetComp<CompRune>().SetRunes(runes);
+                ((Building_Rune) SelThing).SetRunes(runes);
             }
         }
 

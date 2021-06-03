@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using OldWorldGods.Misc;
+using OldWorldGods.Buildings;
 using RimWorld;
 using Verse.AI;
 

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using OldWorldGods.Base;
-using OldWorldGods.Comps;
 using OldWorldGods.Defs.DefOfs;
 using OldWorldGods.Needs;
 using RimWorld;
@@ -9,17 +8,15 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace OldWorldGods.Misc
+namespace OldWorldGods.Buildings
 {
     [StaticConstructorOnStartup]
     public class RuneBlueprint : Blueprint, IThingHolder
     {
         private static readonly ThingDef runeBuilding;
         
-        private Thing thing;
-        private CompRune runeComp;
+        private Building_Rune thing;
         private Rune rune;
-        private Vector3? drawPos;
         private ThingOwner resourceContainer;
         
         protected override float WorkTotal => 10;
@@ -45,13 +42,12 @@ namespace OldWorldGods.Misc
             runeBuilding = DefDatabase<ThingDef>.GetNamed("Spell_Rune_Building");
         }
         
-        public RuneBlueprint(Thing thing, Rune rune)
+        public RuneBlueprint(Building_Rune thing, Rune rune)
         {
             this.resourceContainer = new ThingOwner<Thing>(this, false);
             this.thing = thing;
             this.rune = rune;
             this.def = runeBuilding;
-            runeComp = thing.TryGetComp<CompRune>();
         }
 
         public override void Draw()
@@ -78,7 +74,7 @@ namespace OldWorldGods.Misc
 
         protected override Thing MakeSolidThing()
         {
-            runeComp.AddRune(rune);
+            thing.AddRune(rune);
             Destroy();
             //Just in case any mods check
             return this;
@@ -127,10 +123,6 @@ namespace OldWorldGods.Misc
             Scribe_Deep.Look(ref resourceContainer, "resourceContainer");
             Scribe_Deep.Look(ref rune, "rune");
             Scribe_References.Look(ref thing, "thing");
-            if (runeComp == null)
-            {
-                runeComp = thing?.TryGetComp<CompRune>();
-            }
         }
     }
 }

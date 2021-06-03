@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using OldWorldGods.Misc;
+using OldWorldGods.Buildings;
 using OldWorldGods.Needs;
 using RimWorld;
 using Verse;
