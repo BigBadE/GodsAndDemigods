@@ -14,6 +14,8 @@ namespace OldWorldGods.Comps
 
         public List<Rune> Runes => runes ?? (runes = new List<Rune>());
         
+        public new CompProperties_Rune Props => (CompProperties_Rune) this.props;
+        
         //Needed for initialization
         public CompRune()
         {
@@ -53,9 +55,15 @@ namespace OldWorldGods.Comps
                 blueprint.SpawnSetup(parent.Map, false);
             }
         }
+        
+        public override void ReceiveCompSignal(string signal)
+        {
+        }
+        
 
         public override void CompTick()
         {
+            Log.Message("Called!");
             base.CompTick();
             Log.Message("Runes: " + runes.Count);
             foreach (Rune rune in runes)
@@ -67,13 +75,16 @@ namespace OldWorldGods.Comps
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
+            Log.Message("Setup!");
             if (midRitual)
             {
-                this.UpdateLit(this.parent.Map);
-                this.parent.Map.glowGrid.RegisterGlower(this);
+                UpdateLit(parent.Map);
+                parent.Map.glowGrid.RegisterGlower(this);
             }
             else
-                this.UpdateLit(this.parent.Map);
+            {
+                UpdateLit(this.parent.Map);
+            }
         }
 
         public override void PostDeSpawn(Map map)
@@ -92,7 +103,7 @@ namespace OldWorldGods.Comps
                         innerArray[index] = null;
                 }
             }
-            this.UpdateLit(map);
+            UpdateLit(map);
         }
 
         private new void UpdateLit(Map map)
