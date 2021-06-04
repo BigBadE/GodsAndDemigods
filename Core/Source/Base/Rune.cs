@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using OldWorldGods.Defs;
+using UnityEngine;
 using Verse;
 
 namespace OldWorldGods.Base
@@ -8,11 +9,11 @@ namespace OldWorldGods.Base
         private Graphic graphic;
         private Vector3? drawPosition;
         private IntVec3? drawOffset;
+        private RuneDef type;
         private int position;
-        private int type;
 
         public int Position => position;
-        public int Type
+        public RuneDef Type
         {
             get => type;
             set
@@ -42,7 +43,7 @@ namespace OldWorldGods.Base
         {
         }
         
-        public Rune(int position, int type)
+        public Rune(int position, RuneDef type)
         {
             this.position = position;
             this.type = type;

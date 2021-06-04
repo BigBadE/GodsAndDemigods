@@ -93,6 +93,7 @@ namespace OldWorldGods.Buildings
 
         private void StartRitual()
         {
+            GetComp<CompGlower>().ReceiveCompSignal("FlickedOn");
             God playerGod = Current.Game.GetComponent<Gods>().playerGod;
             if (playerGod == null)
             {
@@ -121,6 +122,7 @@ namespace OldWorldGods.Buildings
 
         private void EndRitual()
         {
+            GetComp<CompGlower>().ReceiveCompSignal("FlickedOff");
             foreach (Pawn caster in casters)
             {
                 caster.jobs.EndCurrentJob(JobCondition.Incompletable);
@@ -149,6 +151,8 @@ namespace OldWorldGods.Buildings
             {
                 SpellManager.CastSpell(effectDef, this, playerGod.GetDef, casters, effectDef.GetTargets(this));
             }
+            
+            Current.Game.GetComponent<Gods>().spellManager.LearnSpell(spellDef);
         }
 
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(

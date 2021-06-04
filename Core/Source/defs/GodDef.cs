@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using System.Collections.Generic;
+using Verse;
 
 namespace OldWorldGods.Defs
 {
@@ -15,5 +16,8 @@ namespace OldWorldGods.Defs
         public RulePackDef names;
         [Description("Effect of the god: blood, poison, time, corruption")]
         public string godEffect;
+        
+        [Description("Spells")]
+        public List<SpellDef> spells;
     }
 }

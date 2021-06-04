@@ -3,7 +3,6 @@ using System.Linq;
 using JetBrains.Annotations;
 using OldWorldGods.Base;
 using OldWorldGods.Buildings;
-using OldWorldGods.Comps;
 using OldWorldGods.Defs;
 using RimWorld;
 using UnityEngine;
@@ -63,18 +62,18 @@ namespace OldWorldGods.Tabs
                         (Texture2D) found.Graphic.MatNorth.mainTexture)) continue;
                 if (found == null)
                 {
-                    runes.Add(new Rune(i, 0));
-                } else if (found.Type == 9)
+                    runes.Add(new Rune(i, DefDatabase<RuneDef>.AllDefs.First(runeDef => runeDef.index == 0)));
+                } else if (found.Type.index == DefDatabase<RuneDef>.DefCount)
                 {
                     runes.Remove(found);
                 }
                 else
                 {
-                    found.Type++;
+                    found.Type = DefDatabase<RuneDef>.AllDefs.First(runeDef => runeDef.index == found.Type.index+1);
                 }
             }
 
-            List<SpellDef> foundSpells = Current.Game.GetComponent<Gods>().FoundSpells;
+            List<SpellDef> foundSpells = Current.Game.GetComponent<Gods>().spellManager.FoundSpells;
             if (foundSpells.Any() && 
                 Widgets.ButtonText(new Rect(new Vector2(0, 0), new Vector2(125, 50)), "FoundRunes".Translate()))
             {

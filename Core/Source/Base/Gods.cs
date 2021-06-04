@@ -14,13 +14,13 @@ namespace OldWorldGods.Base
     public class Gods : GameComponent
     {
         private List<God> gods;
-        private List<SpellDef> foundSpells = new List<SpellDef>();
+
+        public PlayerSpellManager spellManager = new PlayerSpellManager();
         public God playerGod;
-        
+
         //Float between 0 and 100
         private Dictionary<WorldObject, float> detection;
 
-        public List<SpellDef> FoundSpells => foundSpells;
         public List<God> AllGods => gods;
 
         public Gods(Game game)
@@ -53,6 +53,7 @@ namespace OldWorldGods.Base
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Deep.Look(ref spellManager, "spellManager");
             Scribe_Collections.Look(ref gods, "gods", LookMode.Deep);
             Scribe_Collections.Look(ref detection, "detection", LookMode.Reference, LookMode.Value);
         }

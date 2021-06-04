@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using OldWorldGods.Base;
 using OldWorldGods.Conditions;
 using OldWorldGods.Defs;
 using OldWorldGods.Needs;
@@ -25,6 +26,8 @@ namespace OldWorldGods.Incidents
             request.Includes.Add(RulePacksDefOf.DreamDescriptionRoot);
             request.Rules.Add(new Rule_String("ANYPAWN_nameDef", target.Name.ToStringShort));
             //TODO Symbol
+            SpellDef spell = Current.Game.GetComponent<Gods>().spellManager.LearningSpell;
+            
             request.Rules.Add(new Rule_String("ANYSYMBOLUNFOUND", "TODO"));
             request.Rules.Add(new Rule_String("ANYBODYPART", 
                 target.RaceProps.body.AllParts.RandomElement().Label));
