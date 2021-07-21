@@ -7,3 +7,11 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\As
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\obj\Debug\OldWorldGodsCore.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\Assemblies\0Harmony.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\OldWorldGods\Core\obj\Debug\Core.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\Assemblies\0Harmony.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\obj\Debug\Core.AssemblyInfoInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\obj\Debug\Core.AssemblyInfo.cs
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\obj\Debug\Core.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\Assemblies\GodsAndDemigodsCore.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GodsAndDemigods\Core\obj\Debug\GodsAndDemigodsCore.dll

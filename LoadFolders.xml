@@ -1,6 +1,6 @@
 ﻿<loadFolders>
-  <v1.2>
+  <v1.3 IfModActive="Ludeon.Rimworld.Ideology">
     <li>Core</li>
     <li IfModActive="Ludeon.Rimworld.Royalty">Royalty</li>
-  </v1.2>
+  </v1.3>
 </loadFolders>

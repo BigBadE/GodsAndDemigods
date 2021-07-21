@@ -5,8 +5,8 @@
 		<PlatformTarget>x64</PlatformTarget>
 
 		<!-- Modify [RootNamespace], [AssemblyName], [OutputPath], [VersionPrefix] -->
-		<RootNamespace>OldWorldGods</RootNamespace>
-		<AssemblyName>OldWorldGodsCore</AssemblyName>
+		<RootNamespace>GodsAndDemigods</RootNamespace>
+		<AssemblyName>GodsAndDemigodsCore</AssemblyName>
 		<OutputPath>Assemblies</OutputPath>
 		<VersionPrefix>1.0.0-alpha</VersionPrefix>
 
@@ -27,7 +27,14 @@
 		</Reference>
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.1.0" />
+		<PackageReference Include="UnlimitedHugs.Rimworld.HugsLib" Version="9.0.0" ExcludeAssets="runtime" />
+	</ItemGroup>
+
  	<ItemGroup>
- 	  <PackageReference Include="Lib.Harmony" Version="2.0.4" />
+ 	  <Folder Include="Defs" />
+ 	  <Folder Include="Patches" />
+ 	  <Folder Include="Textures" />
  	</ItemGroup>
 </Project>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Defs>
-  <GameConditionDef>
-    <defName>ColonyCorruption</defName>
-    <conditionClass>OldWorldGods.Conditions.GameCondition_Corruption</conditionClass>
-    <label>colony corruption</label>
-    <description>A dark corruption is spreading</description>
-  </GameConditionDef>
-</Defs>

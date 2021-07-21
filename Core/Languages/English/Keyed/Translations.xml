@@ -1,30 +1,3 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-  <CorruptWhispers>{0} {1} are hearing dark whispers, mentioning {2}.\n\nThe following {1} are hearing the whispers:\n\n{3}</CorruptWhispers>
-  <CorruptWhispersTitle>Corrupt Whispers</CorruptWhispersTitle>
-  <DefaultWords>the power of Chaos</DefaultWords>
-  <CorruptWhispersIntervention>Corrupt Whispers Intervention</CorruptWhispersIntervention>
-  <CorruptWhispersInterventionText>A decision needs to be made on how to deal with the whispers</CorruptWhispersInterventionText>
-  <EmpireImplantsTitle>Chaos is spreading</EmpireImplantsTitle>
-  <EmpireImplantsText>{0} claims that Chaos is stronger than ever, and is trying to influence settlements.\n\n They also say they can protect from the corruption with implants, and will gladly take aspiring nobles to fight the corruption.</EmpireImplantsText>
-  <EmpireImplants>Take the implants from {0}</EmpireImplants>
-  <ImplantsRecieved>Implants Installed</ImplantsRecieved>
-  <ImplantsRecievedText>{0} say that you can visit their settlements to get more implants installed at any time.</ImplantsRecievedText>
-  <VisitImplants>Implant to all caravan members (takes .25 days)</VisitImplants>
-  <VisitImplants>Getting protective implants</VisitImplants>
-  <RoyaltyRequired>Side with the Empire (disabled: Royalty only)</RoyaltyRequired>
-  <EmbraceCorruption>Embrace the corruption</EmbraceCorruption>
-  <CorruptionEmbraced>Corruption Embraced</CorruptionEmbraced>
-  <CorruptionEmbracedText>Your colony has chosen to embrace the corruption</CorruptionEmbracedText>
-  <HorrificDream>Horrific Dreams</HorrificDream>
-  <HorrificDreamText>{0} had a dream about {1}</HorrificDreamText>
-  <RunicVision>Runic Vision</RunicVision>
-  <RunicVisionText>{0} had a vision about {1}</RunicVisionText>
-  <CultFight>Cult Fight</CultFight>
-  <CultFightText>{0} started a fight with {1} because they don't like the cult</CultFightText>
-  <CultFightStop>{0} stopped fighting with {1}</CultFightStop>
-  <UndrawnRune>An undrawn rune (placeholder)</UndrawnRune>
-  <TabRunes>Runes</TabRunes>
-  <TabRunesTitle>Draw Runes</TabRunesTitle>
-  <FoundRunes>Re-summon Found Rune</FoundRunes>
 </LanguageData>

@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "UXuDQrRN+NqPD4BCWy0ELwet8+fCQtVDYHEstghtAcKuLLn0Cs1OOr3QwzxujDOZX+yxDx+2UOx3H/skdUiQ1Q==",
+  "dgSpecHash": "PVpw0fYPfVx7DH/Eb18QalaslSjlAAZnZCbdbGroB0fFEF/wnYk3d0MRMg29xzcOdXR+/q+GMWxjPMUofBCTMw==",
   "success": true,
-  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\OldWorldGods\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\GodsAndDemigods\\Core\\Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bmene\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512"
+    "C:\\Users\\bmene\\.nuget\\packages\\lib.harmony\\2.1.0\\lib.harmony.2.1.0.nupkg.sha512",
+    "C:\\Users\\bmene\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\bmene\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512",
+    "C:\\Users\\bmene\\.nuget\\packages\\unlimitedhugs.rimworld.hugslib\\9.0.0\\unlimitedhugs.rimworld.hugslib.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }
